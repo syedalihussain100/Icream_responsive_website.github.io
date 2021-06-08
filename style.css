@@ -1,0 +1,256 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+}
+
+a {
+  text-decoration: none;
+}
+
+ul {
+  list-style-type: none;
+}
+
+section {
+  position: relative;
+  min-height: 100vh;
+  padding: 100px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #fff;
+}
+
+header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 20px 100px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+header .logo {
+  position: relative;
+  max-width: 80px;
+  object-fit: contain;
+}
+
+header ul {
+  position: relative;
+  display: flex;
+}
+
+header ul li a {
+  display: inline-block;
+  color: #333;
+  margin-left: 40px;
+  font-weight: 400;
+}
+
+.content {
+  position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.content .textbox {
+  position: relative;
+  max-width: 600px;
+}
+
+.content .textbox h2 {
+  color: #333;
+  font-size: 3em;
+  font-weight: 500;
+  line-height: 1.4em;
+}
+
+.content .textbox h2 span {
+  color: #017143;
+  font-size: 1.2em;
+  font-weight: 900;
+}
+
+.content .textbox p {
+  text-align: justify;
+}
+
+.content .textbox a {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 8px 20px;
+  background: #017143;
+  color: #fff;
+  border-radius: 40px;
+  font-weight: 500;
+  letter-spacing: 1px;
+}
+.content .img_box img {
+  position: relative;
+  max-width: 270px;
+}
+
+.content .img_box {
+  width: 700px;
+  display: flex;
+  justify-content: flex-end;
+  padding-right: 40px;
+  margin-top: 50px;
+}
+
+.thump {
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  transform: translate(-50%);
+  display: flex;
+}
+
+.thump li {
+  display: inline-block;
+  margin: 0px 20px;
+  cursor: pointer;
+  transition: 0.5s all ease-in-out;
+}
+
+.thump li:hover {
+  transform: translateY(-15px);
+}
+.thump li img {
+  max-width: 60px;
+}
+
+.social {
+  position: absolute;
+  transform: translateY(-50%);
+  top: 50%;
+  right: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.social li {
+  margin: 10px 0px;
+  cursor: pointer;
+  transform: scale(0.8);
+}
+.social li img {
+  max-width: 20px;
+  filter: invert(1);
+}
+/* circle */
+.circle {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #017143;
+  clip-path: circle(420px at right 600px);
+  transition: 0.5s all ease-in-out;
+}
+
+/*  */
+@media screen and (max-width: 900px) {
+  header {
+    padding: 20px;
+  }
+  section {
+    padding: 20px 20px 120px;
+  }
+  header .logo {
+    max-width: 60px;
+  }
+  header ul {
+    display: none;
+  }
+  /* toogle */
+  .toggle{
+    position: relative;
+    height: 30px;
+    width: 25px;
+    background: url('./images/menu.png');
+    cursor: pointer;
+    background-size: 30px;
+    background-repeat: no-repeat;
+    background-position: center;
+    filter: invert(1);
+    transition: 0.5s all ease-in-out;
+    z-index: 1000;
+  }
+  .toggle.active{
+    position: fixed;
+    right: 20px;
+    height: 30px;
+    width: 25px;
+    background: url('./images/close.png');
+    cursor: pointer;
+    background-size: 22px;
+    background-repeat: no-repeat;
+    background-position: center;
+    filter: invert(1);
+    transition: 0.5s all ease-in-out;
+  }
+  header ul.navigation.active{
+    top: 0;
+    left: 0;
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background: #fff;
+    z-index: 999;
+  }
+  .navigation.active li a{
+    font-size: 1.2em;
+    margin: 10px 0px;
+  }
+  /*  */
+  .content {
+    flex-direction: column;
+    margin-top: 100px;
+  }
+  .content .textbox h2 {
+    font-size: 1.5em;
+    margin-bottom: 15px;
+  }
+  .content .textbox p {
+    font-size: 0.9rem;
+  }
+  .content .textbox {
+    max-width: 100%;
+  }
+  .circle {
+    clip-path: circle(410px at center bottom);
+  }
+  .content .img_box {
+    justify-content: center;
+    max-width: 100%;
+  }
+  .content .img_box img {
+    max-width: 200px;
+  }
+  .thump li img {
+    max-width: 40px;
+  }
+  .social {
+    background: green;
+    right: 0;
+    width: 50px;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+}
+}
